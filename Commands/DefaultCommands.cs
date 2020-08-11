@@ -29,5 +29,20 @@ namespace MidiBot.Commands
             int rolledNumber = new Random().Next(1, number);
             await ctx.Channel.SendMessageAsync(rolledNumber.ToString()).ConfigureAwait(false);
         }
+
+        [Command("ask")]
+        public async Task Ask(CommandContext ctx)
+        {
+            if (ctx.Message.Content.EndsWith('?'))
+            {
+                String[] answers = { "YES", "NO" };
+                await ctx.Channel.SendMessageAsync(answers[new Random().Next(0, answers.Length)]).ConfigureAwait(false);
+            }
+            else
+            {
+                await ctx.Channel.SendMessageAsync("Ask a question please").ConfigureAwait(false);
+            }
+
+        }
     }
 }
