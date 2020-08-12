@@ -1,7 +1,7 @@
 # MidiBot
 MIDI Discord bot
 
-### [Latest release](https://github.com/morozoffnor/MidiBot/releases/tag/v1.0)
+### [Latest release](https://github.com/morozoffnor/MidiBot/releases/tag/v1.1)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/e41e5665159743469595a4d817cb5736)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=morozoffnor/MidiBot&amp;utm_campaign=Badge_Grade)
 
