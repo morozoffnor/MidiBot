@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using DSharpPlus.Entities;
 
 namespace MidiBot
 {
@@ -31,7 +32,7 @@ namespace MidiBot
                 Token = configJson.Token,
                 TokenType = TokenType.Bot,
                 AutoReconnect = true,
-                LogLevel = LogLevel.Debug,
+                LogLevel = LogLevel.Info,
                 UseInternalLogHandler = true
             };
 
@@ -51,7 +52,9 @@ namespace MidiBot
             Commands = Client.UseCommandsNext(commandsConfig);
             Commands.RegisterCommands<DefaultCommands>();
 
-            await Client.ConnectAsync();
+            
+
+            await Client.ConnectAsync(Act);
             await Task.Delay(-1);
         }
 
@@ -59,5 +62,9 @@ namespace MidiBot
         {
             return Task.CompletedTask;
         }
+
+        
+        public DiscordActivity Act = new DiscordActivity("!help [cmd]", ActivityType.Watching);
+        
     }
 }
